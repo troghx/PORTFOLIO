@@ -1,0 +1,319 @@
+/* Estilos CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f700ff;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    font-size: clamp(2rem, 2vw, 3rem);
+    font-weight: 100;
+}
+
+/* Fondo con blur */
+.background-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('imagenes/background.JPG') no-repeat center;
+    background-size: cover;
+    filter: blur(3px);
+    z-index: -1;
+}
+
+/* Navegación */
+nav {
+    background-color: rgba(238, 174, 229, 0.548);
+    padding: 1rem;
+    border-radius: 20px;
+    margin: 1rem;
+    position: sticky;
+    top: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    color: #000000;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(238, 174, 229, 0.548);
+}
+
+/* Botón de cambio de idioma */
+.lang-btn {
+    background-color: #ff4d7fbe;   /* color llamativo */
+    color: #fff;
+    padding: 0.1rem 0.5rem;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.25s ease;
+    border: none;
+    outline: none;                 /* para accesibilidad */
+}
+.lang-btn:hover {
+    background-color: #e63d68;
+    transform: scale(1.05);
+}
+
+
+/* Secciones */
+section {
+    background-color: rgba(238, 174, 229, 0.664);
+    margin: 2rem 1rem;
+    padding: 1rem;
+    border-radius: 25px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+section:nth-child(2) { animation-delay: 0.2s; }
+section:nth-child(3) { animation-delay: 0.4s; }
+section:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+#inicio {
+    background-color: rgba(238, 174, 229, 0.507);
+    margin: 1rem 1rem;
+    padding: 0.1rem;
+    border-radius: 25px;
+    max-width: 2500px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    position: relative;
+    text-align: center;
+}
+
+.social-container {
+    position: relative;
+    margin: 2rem auto;
+    max-width: 80%;
+}
+
+.social-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(248, 50, 255, 0.548), transparent);
+    margin: 1rem auto;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.social-icon {
+    transition: all 0.3s ease;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    justify-content: center;
+    text-decoration: none;
+    border: 2px solid transparent;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+
+.profile-container {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    margin: 2rem auto;
+    z-index: 10;
+}
+
+.profile-img, .profile-video {
+    width: 150px;
+    height: 150px;
+    zoom: 1.6;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(99, 232, 255, 0.5);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.profile-hover-zone {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    cursor: pointer;
+}
+
+.profile-hover-zone:hover ~ .profile-img {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.profile-hover-zone:hover ~ .profile-video {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 15px rgb(99, 232, 255), 0 0 30px rgb(99, 232, 255);
+}
+
+.speech-bubble {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(20px, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0.8rem 1.2rem;
+    border-radius: 20px;
+    box-shadow: 0 3px 15px rgba(99, 232, 255, 0.39);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    width: 180px;
+    text-align: center;
+    z-index: 15;
+}
+
+.speech-bubble::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent rgba(255, 255, 255, 0.9) transparent transparent;
+    transform: translateY(-50%);
+}
+
+.speech-bubble.visible {
+    opacity: 1;
+    transform: translate(30px, -50%);
+}
+
+#sobre-mi {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    width: 80%;
+    max-width: 500px;
+    animation: fadeIn 0.5s;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-img, .profile-video {
+        width: 100px;
+        height: 100px;
+    }
+
+    .speech-bubble {
+        width: 120px;
+        left: 100%;
+        transform: translate(15px, -50%);
+        padding: 0.5rem 0.8rem;
+    }
+
+    .speech-bubble.visible {
+        transform: translate(20px, -50%);
+    }
+
+    .speech-bubble::before {
+        border-width: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .social-links {
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+
+    .social-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 1.5rem;
+    }
+}
+
+.dropdown {
+    margin-top: 1rem;
+}
+
+.dropdown-btn {
+    background-color: #3498db;
+    color: rgb(255, 177, 236);
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background-color: #2980b9;
+}
+
+.dropdown-content {
+    display: none;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    background-color: rgba(238, 174, 229, 0);
+    border-radius: 15px;
+}
+
+.dropdown-content.active {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav a {
+        margin: 0.5rem 0;
+    }
+}

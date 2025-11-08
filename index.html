@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-blur"></div>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre Mí</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <!-- Botón para cambiar idioma -->
+            <button id="lang-switch" class="lang-btn"
+            data-lang-es="ES"
+            data-lang-en="EN">🌐</button>
+        </ul>
+    </nav>
+
+    <div class="profile-container">
+        <div class="profile-hover-zone"></div>
+        <img src="imagenes/foto perfil.jpg" alt="Elliot De La Mora" class="profile-img">
+        <video class="profile-video" autoplay loop muted>
+            <source src="imagenes/foto perfil video.mp4" type="video/mp4">
+        </video>
+        <div class="speech-bubble hidden">
+            <span class="bubble-text">Hey, hola!</span>
+        </div>
+    </div>
+
+    <main>
+        <section id="inicio">
+            <br><br><h1>Elliot De La Mora</h1>
+            <div class="social-container">
+                <div class="social-divider"></div>
+                <div class="social-links">
+                    <a href="https://www.youtube.com/@trolot44" target="_blank" class="social-icon">
+                        <img src="imagenes/logos redes/youtube-icon-logo-png_seeklogo-306460 (1).png" width="33px" height="33.5px" alt="YouTubeLogo"></a>
+                    <a href="https://www.twitch.tv/tr0l0t" target="_blank" class="social-icon">
+                        <img src="imagenes/logos redes/twitch-tv-logo-png_seeklogo-259676 (1).png" width="30px" height="30px" alt="TwitchLogo"></a>
+                    <a href="https://www.tiktok.com/@trolott" target="_blank" class="social-icon">
+                        <img src="imagenes/logos redes/tiktok-logo-1F4A5DCD45-seeklogo.com (1).png" width="30px" height="30px" alt="TikTokLogo"></a>
+                    <a href="https://x.com/TROLOTdlm" target="_blank" class="social-icon">
+                        <img src="imagenes/logos redes/twitter-x-logo-png_seeklogo-492396 (1).png" width="35px" height="34px" alt="TwitterLogo"></a>
+                    <a href="https://www.instagram.com/trolot_/reels/" target="_blank" class="social-icon">
+                        <img src="imagenes/logos redes/instagram-circle-logo-E285122AB7-seeklogo.com (1).png" width="32px" height="32px" alt="InstagramLogo"></a>
+                </div>
+        </section>
+        <section id="proyectos">
+            <h2>Proyectos</h2>
+            <p>Aquí están algunos de mis trabajos.</p>
+            <div class="dropdown">
+                <button class="dropdown-btn"></button>
+                <div class="dropdown-content">
+                    <p>▶ <a href="https://trogh.netlify.app/" target="_blank" rel="noopener noreferrer">Trogh</a>: Aplicación web del proyecto.</p>
+                    <p>▶ Proyecto 2: Otra descripción.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Envíame un mensaje a elliotdlm@hotmail.com</p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
